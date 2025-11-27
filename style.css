@@ -659,16 +659,19 @@ body::before {
 
 /* Smaller logo */
 .sponsor-logo {
-  max-width: 100px; /* smaller size */
+  max-width: 50px; /* smaller size */
   height: auto;
   margin-bottom: 5px;
 }
 
 /* Sponsor text */
 .sponsor-text {
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 0.75rem; /* smaller font so it fits */
+  color: #0ff;         /* neon cyan so it’s visible */
+  display: block;      /* force it to appear below the logo */
+  margin-top: 3px;     /* small spacing */
 }
+
 
 /* Gear disclaimer */
 .gear-disclaimer {
