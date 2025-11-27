@@ -645,32 +645,26 @@ body::before {
 
 /* Sponsor Section */
 .sponsor-section {
-  display: flex;
-  flex-direction: column; /* text below logo */
-  align-items: center;
+  display: inline-block;       /* allows text to appear below logo */
+  text-align: center;          /* center text under logo */
+  color: #0ff;                 /* neon cyan */
   text-decoration: none;
-  color: #0ff;
-  transition: transform 0.2s, color 0.2s;
 }
 
-.sponsor-section:hover {
-  transform: scale(1.05);
-}
-
-/* Smaller logo */
 .sponsor-logo {
-  max-width: 50px; /* smaller size */
+  max-width: 50px;             /* smaller logo */
   height: auto;
-  margin-bottom: 5px;
+  display: block;              /* forces next element onto new line */
+  margin: 0 auto 5px auto;     /* centers logo and adds spacing below */
 }
 
-/* Sponsor text */
 .sponsor-text {
-  font-size: 0.75rem; /* smaller font so it fits */
-  color: #0ff;         /* neon cyan so it’s visible */
-  display: block;      /* force it to appear below the logo */
-  margin-top: 3px;     /* small spacing */
+  display: block;              /* ensures it appears below logo */
+  font-size: 0.75rem;
+  color: #0ff;
+  letter-spacing: 0.5px;
 }
+
 
 
 /* Gear disclaimer */
