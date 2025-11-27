@@ -2,11 +2,12 @@
 /* Font Face Definitions */
 /* Sddystopian font */
 @font-face {
-    font-family: 'Sddystopian';
-    src: url('fonts/Sddystopian.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+      font-family: 'SDDystopian';
+      src: url('Assets/fonts/SDDystopian.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 
 /* ShareTechMono font */
 @font-face {
