@@ -693,7 +693,33 @@ tailwind.config = {
             </div>
         </section>
 </main>
-    <script src="components/header.js"></script>
+    
+    <div class="footer-container">
+        <div class="contact-modal" id="contact-modal">
+          <div class="modal-content">
+            <h3>SEND MESSAGE</h3>
+            <form id="contact-form">
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+              <textarea placeholder="Your Message" required></textarea>
+              <button type="submit">SEND</button>
+              <button type="button" class="close-btn">CLOSE</button>
+            </form>
+          </div>
+        </div>
+<a href="https://zentaka.com" class="sponsor-section">
+          <img src="images/zentaka logo.png" alt="Zentaka Cybernetics" class="sponsor-logo">
+          <span class="sponsor-text">OFFICIAL CYBERNETICS PROVIDER</span>
+        </a>
+<div class="gear-disclaimer">
+          All cybernetic gear issued by Zentaka Cybernetics Division
+        </div>
+        <a href="https://zentaka.com" class="copyright">
+          © 2077 ZENTAKA CYBERNETICS. ALL RIGHTS RESERVED.
+        </a>
+</div>
+
+<script src="components/header.js"></script>
     <script src="components/footer.js"></script>
 <script src="script.js"></script>
     <script>
@@ -712,6 +738,6 @@ tailwind.config = {
             });
         }, 3000);
     </script>
-    <custom-footer></custom-footer>
+	
 </body>
 </html>
