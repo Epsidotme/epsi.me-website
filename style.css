@@ -631,22 +631,22 @@ body::before {
 
 /* Footer container */
 .footer-container {
-  background-color: #0b0b0b; /* dark background */
-  color: #0ff; /* neon cyan text */
+  background-color: #0b0b0b;
+  color: #0ff;
   text-align: center;
-  padding: 30px 20px;
+  padding: 20px;
   font-family: 'Orbitron', sans-serif;
-  border-top: 2px solid #0ff; /* subtle neon border */
+  border-top: 2px solid #0ff;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   align-items: center;
 }
 
 /* Sponsor Section */
 .sponsor-section {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* text below logo */
   align-items: center;
   text-decoration: none;
   color: #0ff;
@@ -655,32 +655,32 @@ body::before {
 
 .sponsor-section:hover {
   transform: scale(1.05);
-  color: #0ff;
 }
 
+/* Smaller logo */
 .sponsor-logo {
-  max-width: 150px;
+  max-width: 100px; /* smaller size */
   height: auto;
   margin-bottom: 5px;
 }
 
 /* Sponsor text */
 .sponsor-text {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   letter-spacing: 1px;
 }
 
 /* Gear disclaimer */
 .gear-disclaimer {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #0ff;
   opacity: 0.8;
-  max-width: 400px;
+  max-width: 350px;
 }
 
 /* Copyright */
 .footer-container a.copyright {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #0ff;
   text-decoration: none;
   letter-spacing: 0.5px;
@@ -693,11 +693,11 @@ body::before {
 /* Responsive tweaks */
 @media (max-width: 500px) {
   .sponsor-logo {
-    max-width: 120px;
+    max-width: 80px;
   }
 
   .gear-disclaimer {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     max-width: 250px;
   }
 }
