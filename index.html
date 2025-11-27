@@ -1,0 +1,717 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epsi | Zentaka Cybernetics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyberpurple: '#9d00ff',
+                        cyberblue: '#00f0ff',
+                        cyberdark: '#0a0a1a',
+                    },
+                    fontFamily: {
+                        'cyber': ['"Sddystopian"', 'sans-serif'],
+                        'tech': ['"Share Tech Mono"', 'monospace']
+                    },
+                    animation: {
+                        'glitch': 'glitch 1s linear infinite',
+                        'flicker': 'flicker 3s linear infinite',
+                        'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    },
+                    keyframes: {
+                        glitch: {
+                            '0%': { transform: 'translate(0)' },
+                            '20%': { transform: 'translate(-2px, 2px)' },
+                            '40%': { transform: 'translate(-2px, -2px)' },
+                            '60%': { transform: 'translate(2px, 2px)' },
+                            '80%': { transform: 'translate(2px, -2px)' },
+                            '100%': { transform: 'translate(0)' }
+                        },
+                        flicker: {
+                            '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': { opacity: '1' },
+                            '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': { opacity: '0.4' }
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { 'box-shadow': '0 0 5px rgba(157, 0, 255, 0)' },
+                            '50%': { 'box-shadow': '0 0 20px rgba(157, 0, 255, 0.7)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-cyberdark text-cyberblue font-cyber min-h-screen overflow-x-hidden">
+    <custom-header></custom-header>
+    
+    <main class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Glitch background elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10"></div>
+            <div class="glitch-box glitch-box-1"></div>
+            <div class="glitch-box glitch-box-2"></div>
+        </div>
+
+        <section class="mb-16 relative">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/3 relative">
+                    <div class="border-2 border-cyberpurple p-1 relative">
+                        <div class="border border-cyberblue p-1">
+                            <img src="images/epsi pfp.png" alt="Epsi Profile" class="w-full h-auto filter brightness-110 contrast-110">
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 bg-cyberpurple text-cyberdark px-3 py-1 text-sm font-bold">
+                            EPSI v4.2.0
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyberpurple to-cyberblue">
+                        <span class="inline-block animate-glitch">EPSI</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl mb-6 text-cyberpurple font-cyber">ZENTAKA CYBERNETICS OPERATIVE</h2>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="images/zentaka logo.png" alt="Zentaka Logo" class="h-8">
+                        <span class="text-sm text-cyberblue font-tech">Sponsored Cybernetics</span>
+                    </div>
+<p class="mb-6 text-lg font-tech leading-relaxed">
+                        Specializing in neural hacking, data extraction, and corporate espionage. 
+                        Currently operating in Night City's high-security networks.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#stats" class="btn-primary font-tech">VIEW STATS</a>
+                        <a href="#missions" class="btn-secondary font-tech">ACTIVE MISSIONS</a>
+                        <a href="#gear" class="btn-tertiary font-tech">CYBER GEAR</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-b border-cyberpurple pb-2">NEURAL STATS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="cpu"></i>
+                    </div>
+                    <h3>PROCESSING</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 92%"></div>
+                    </div>
+                    <span class="stat-value">92/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="shield"></i>
+                    </div>
+                    <h3>SECURITY</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="stat-value">85/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="zap"></i>
+                    </div>
+                    <h3>REACTION</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 97%"></div>
+                    </div>
+                    <span class="stat-value">97/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="database"></i>
+                    </div>
+                    <h3>MEMORY</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 88%"></div>
+                    </div>
+                    <span class="stat-value">88/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="globe"></i>
+                    </div>
+                    <h3>NETWORK</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 76%"></div>
+                    </div>
+                    <span class="stat-value">76/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="eye"></i>
+                    </div>
+                    <h3>VISUAL</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 94%"></div>
+                    </div>
+                    <span class="stat-value">94/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="git-merge"></i>
+                    </div>
+                    <h3>SYNC</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 82%"></div>
+                    </div>
+                    <span class="stat-value">82/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="activity"></i>
+                    </div>
+                    <h3>STABILITY</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 91%"></div>
+                    </div>
+                    <span class="stat-value">91/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="lock"></i>
+                    </div>
+                    <h3>ENCRYPTION</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 79%"></div>
+                    </div>
+                    <span class="stat-value">79/100</span>
+                </div>
+            </div>
+</section>
+        <section id="missions" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-b border-cyberpurple pb-2">ACTIVE MISSIONS</h2>
+            <div class="mission-list">
+                <div class="mission-item" data-mission-id="1">
+                    <div class="mission-status mission-status-active"></div>
+                    <div class="mission-content">
+                        <h3>DATA HEIST: ARASAKA MAINFRAME</h3>
+                        <p class="mission-description font-tech">Infiltrate Arasaka Tower subnet and extract neural prototype schematics.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-high">HIGH RISK</span>
+                            <span class="mission-reward">¥85,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Breach Arasaka subnet security protocols</li>
+                                <li>Extract neural prototype schematics from R&D division</li>
+                                <li>Plant false data trail</li>
+                                <li>Exfiltrate without detection</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info ">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">ZENTAKA R&D</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Arasaka Tower, Night City</span>
+                            </div>
+                            <div>
+                                <span class="info-label">TIME LIMIT:</span> 
+                                <span class="info-value">48h remaining</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+                <div class="mission-item" data-mission-id="2">
+                    <div class="mission-status mission-status-warning"></div>
+                    <div class="mission-content">
+                        <h3>SURVEILLANCE: KANG TAO</h3>
+                        <p class="mission-description font-tech">Monitor Kang Tao executive communications for Zentaka Corp.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-medium">MEDIUM RISK</span>
+                            <span class="mission-reward">¥42,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Establish surveillance taps on Kang Tao execs</li>
+                                <li>Monitor all communications for Zentaka keywords</li>
+                                <li>Report any suspicious activity</li>
+                                <li>Maintain cover for 72h</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">ZENTAKA Intel</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Kang Tao HQ, Corporate Zone</span>
+                            </div>
+                            <div>
+                                <span class="info-label">TIME LIMIT:</span> 
+                                <span class="info-value">60h remaining</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+                <div class="mission-item" data-mission-id="3">
+                    <div class="mission-status mission-status-active"></div>
+                    <div class="mission-content">
+                        <h3>EXTRACTION: BIOTECH SCIENTIST</h3>
+                        <p class="mission-description font-tech">Extract rogue scientist from Militech blacksite with neural research data.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-high">HIGH RISK</span>
+                            <span class="mission-reward">¥120,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Infiltrate Militech blacksite</li>
+                                <li>Locate and extract Dr. Chen</li>
+                                <li>Secure neural research data</li>
+                                <li>Escape to extraction point</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">Anonymous</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Militech Facility, Badlands</span>
+                            </div>
+                            <div>
+                                <span class="info-label">TIME LIMIT:</span> 
+                                <span class="info-value">36h remaining</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+                <div class="mission-item" data-mission-id="4">
+                    <div class="mission-status mission-status-warning"></div>
+                    <div class="mission-content">
+                        <h3>DATA RECOVERY: LOST PROTOCOL</h3>
+                        <p class="mission-description font-tech">Recover lost Zentaka cyberware protocol from abandoned lab.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-medium">MEDIUM RISK</span>
+                            <span class="mission-reward">¥65,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Breach old Zentaka R&D facility</li>
+                                <li>Recover neural protocol X-42</li>
+                                <li>Override security systems</li>
+                                <li>Delete all traces of access</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">ZENTAKA R&D</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Old Zentaka Facility, Industrial Zone</span>
+                            </div>
+                            <div>
+                                <span class="info-label">TIME LIMIT:</span> 
+                                <span class="info-value">72h remaining</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+</div>
+        </section>
+
+        <section id="completed-missions" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-b border-cyberpurple pb-2">COMPLETED MISSIONS</h2>
+            <div class="mission-list">
+                <div class="mission-item" data-mission-id="3">
+                    <div class="mission-status mission-status-completed"></div>
+                    <div class="mission-content">
+                        <h3>TERMINATE: ROGUE AI</h3>
+                        <p class="mission-description font-tech">Eliminate rogue AI construct in Pacifica network hub.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-completed">COMPLETED</span>
+                            <span class="mission-reward">¥68,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Locate AI core in Pacifica network hub</li>
+                                <li>Deploy ICE breaker protocols</li>
+                                <li>Purge all instances of the rogue AI</li>
+                                <li>Secure payment from fixer</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">Night City NetWatch</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Pacifica Network Hub</span>
+                            </div>
+                            <div>
+                                <span class="info-label">COMPLETED:</span> 
+                                <span class="info-value">24.10.2077</span>
+                            </div>
+                            <div>
+                                <span class="info-label">RATING:</span> 
+                                <span class="info-value">★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+                <div class="mission-item" data-mission-id="4">
+                    <div class="mission-status mission-status-completed"></div>
+                    <div class="mission-content">
+                        <h3>SABOTAGE: MILITECH DATACENTER</h3>
+                        <p class="mission-description font-tech">Disrupt Militech datacenter operations for 12 hours.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-completed">COMPLETED</span>
+                            <span class="mission-reward">¥95,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Infiltrate Militech datacenter</li>
+                                <li>Plant logic bombs in mainframes</li>
+                                <li>Trigger cascading failures</li>
+                                <li>Escape without detection</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">Arasaka Counter-Intel</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Militech Datacenter, Night City</span>
+                            </div>
+                            <div>
+                                <span class="info-label">COMPLETED:</span> 
+                                <span class="info-value">17.10.2077</span>
+                            </div>
+                            <div>
+                                <span class="info-label">RATING:</span> 
+                                <span class="info-value">★★★★☆</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+                <div class="mission-item" data-mission-id="5">
+                    <div class="mission-status mission-status-completed"></div>
+                    <div class="mission-content">
+                        <h3>EXFILTRATION: NETRUNNER</h3>
+                        <p class="mission-description font-tech">Extract wounded netrunner from Arasaka pursuit.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-completed">COMPLETED</span>
+                            <span class="mission-reward">¥75,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Locate netrunner in combat zone</li>
+                                <li>Stabilize neural damage</li>
+                                <li>Evade Arasaka patrols</li>
+                                <li>Deliver to safehouse</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">Night City Underground</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Combat Zone, Night City</span>
+                            </div>
+                            <div>
+                                <span class="info-label">COMPLETED:</span> 
+                                <span class="info-value">10.10.2077</span>
+                            </div>
+                            <div>
+                                <span class="info-label">RATING:</span> 
+                                <span class="info-value">★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+                <div class="mission-item" data-mission-id="6">
+                    <div class="mission-status mission-status-completed"></div>
+                    <div class="mission-content">
+                        <h3>DECRYPTION: PROTOTYPE SCHEMATICS</h3>
+                        <p class="mission-description font-tech">Break encryption on stolen Zentaka prototype designs.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-completed">COMPLETED</span>
+                            <span class="mission-reward">¥58,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Analyze encryption patterns</li>
+                                <li>Bypass quantum locks</li>
+                                <li>Recover complete schematics</li>
+                                <li>Purge all copies from black market</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">ZENTAKA Security</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Virtual Operation</span>
+                            </div>
+                            <div>
+                                <span class="info-label">COMPLETED:</span> 
+                                <span class="info-value">05.10.2077</span>
+                            </div>
+                            <div>
+                                <span class="info-label">RATING:</span> 
+                                <span class="info-value">★★★★☆</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+                <div class="mission-item" data-mission-id="7">
+                    <div class="mission-status mission-status-completed"></div>
+                    <div class="mission-content">
+                        <h3>INFILTRATION: ARASAKA TOWER</h3>
+                        <p class="mission-description font-tech">Plant surveillance devices in Arasaka executive offices.</p>
+                        <div class="mission-meta">
+                            <span class="mission-difficulty difficulty-completed">COMPLETED</span>
+                            <span class="mission-reward">¥110,000</span>
+                        </div>
+                    </div>
+                    <div class="mission-details">
+                        <div class="mission-objectives font-tech">
+                            <h4>OBJECTIVES:</h4>
+                            <ul>
+                                <li>Disguise as maintenance crew</li>
+                                <li>Plant nano-bugs in target offices</li>
+                                <li>Bypass security scanners</li>
+                                <li>Exit facility undetected</li>
+                            </ul>
+                        </div>
+                        <div class="mission-info">
+                            <div>
+                                <span class="info-label">CLIENT:</span> 
+                                <span class="info-value">Kang Tao Intelligence</span>
+                            </div>
+                            <div>
+                                <span class="info-label">LOCATION:</span> 
+                                <span class="info-value">Arasaka Tower, Night City</span>
+                            </div>
+                            <div>
+                                <span class="info-label">COMPLETED:</span> 
+                                <span class="info-value">28.09.2077</span>
+                            </div>
+                            <div>
+                                <span class="info-label">RATING:</span> 
+                                <span class="info-value">★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mission-toggle">
+                        <i data-feather="chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+</section>
+<section id="gear" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-b border-cyberpurple pb-2">ZENTAKA CYBER GEAR</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gear-card">
+                    <div class="gear-image">
+                        <img src="images/neural.png" alt="Neural Interface">
+                    </div>
+                    <div class="gear-details">
+                        <h3>ZENTAKA NEURAL LINK v4.2</h3>
+                        <p class="gear-description font-tech">Direct neural interface with quantum encryption protocol.</p>
+                        <div class="gear-specs">
+                            <div><span class="spec-label">Bandwidth:</span> <span class="spec-value">42 Gb/s</span></div>
+                            <div><span class="spec-label">Latency:</span> <span class="spec-value">0.8ms</span></div>
+                            <div><span class="spec-label">Encryption:</span> <span class="spec-value">ZK-256</span></div>
+                        </div>
+                        <div class="gear-stats">
+                            <span class="gear-stat"><i data-feather="activity"></i> 92% Sync</span>
+                            <span class="gear-stat"><i data-feather="battery"></i> 78% Charge</span>
+                            <span class="gear-stat"><i data-feather="zap"></i> 4.2kW</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <div class="gear-image">
+                        <img src="images/deck.png" alt="Cyberdeck">
+                    </div>
+                    <div class="gear-details">
+                        <h3>ZENTAKA QUANTUM DECK</h3>
+                        <p class="gear-description font-tech">Corporate-issue hacking device with quantum co-processor.</p>
+                        <div class="gear-specs">
+                            <div><span class="spec-label">RAM:</span> <span class="spec-value">64EB</span></div>
+                            <div><span class="spec-label">Ports:</span> <span class="spec-value">8x ZK-Slot</span></div>
+                            <div><span class="spec-label">ICE:</span> <span class="spec-value">ZK-Blade v3</span></div>
+                        </div>
+                        <div class="gear-stats">
+                            <span class="gear-stat"><i data-feather="activity"></i> 100% Sync</span>
+                            <span class="gear-stat"><i data-feather="battery"></i> 65% Charge</span>
+                            <span class="gear-stat"><i data-feather="cpu"></i> 4.2THz</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <div class="gear-image">
+                        <img src="images/eye.png" alt="Optics">
+                    </div>
+                    <div class="gear-details">
+                        <h3>ZENTAKA K2 OPTICS</h3>
+                        <p class="gear-description font-tech">Enhanced visual interface with full-spectrum overlay.</p>
+                        <div class="gear-specs">
+                            <div><span class="spec-label">Zoom:</span> <span class="spec-value">12x</span></div>
+                            <div><span class="spec-label">HUD:</span> <span class="spec-value">AR/VR Hybrid</span></div>
+                            <div><span class="spec-label">Night Vision:</span> <span class="spec-value">Gen-5</span></div>
+                        </div>
+                        <div class="gear-stats">
+                            <span class="gear-stat"><i data-feather="activity"></i> 88% Sync</span>
+                            <span class="gear-stat"><i data-feather="battery"></i> 91% Charge</span>
+                            <span class="gear-stat"><i data-feather="eye"></i> 240Hz</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <div class="gear-image">
+                        <img src="images/nanoarmor.png" alt="Subdermal Armor">
+                    </div>
+                    <div class="gear-details">
+                        <h3>ZENTAKA NANOWEAVE</h3>
+                        <p class="gear-description font-tech">Subdermal armor plating with self-repair matrix.</p>
+                        <div class="gear-specs">
+                            <div><span class="spec-label">Density:</span> <span class="spec-value">98% Coverage</span></div>
+                            <div><span class="spec-label">Material:</span> <span class="spec-value">ZK-Titanium</span></div>
+                            <div><span class="spec-label">Regen:</span> <span class="spec-value">12mm/hr</span></div>
+                        </div>
+                        <div class="gear-stats">
+                            <span class="gear-stat"><i data-feather="shield"></i> 95% Integrity</span>
+                            <span class="gear-stat"><i data-feather="activity"></i> 76% Sync</span>
+                            <span class="gear-stat"><i data-feather="thermometer"></i> 42°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <div class="gear-image">
+                        <img src="images/arm.png" alt="Cyberarm">
+                    </div>
+                    <div class="gear-details">
+                        <h3>ZENTAKA KINETIC ARM</h3>
+                        <p class="gear-description font-tech">High-performance cybernetic limb with built-in weapons.</p>
+                        <div class="gear-specs">
+                            <div><span class="spec-label">Strength:</span> <span class="spec-value">2.4 Tons</span></div>
+                            <div><span class="spec-label">Precision:</span> <span class="spec-value">0.01mm</span></div>
+                            <div><span class="spec-label">Weapons:</span> <span class="spec-value">ZK-Wristblade</span></div>
+                        </div>
+                        <div class="gear-stats">
+                            <span class="gear-stat"><i data-feather="zap"></i> 480V</span>
+                            <span class="gear-stat"><i data-feather="activity"></i> 82% Sync</span>
+                            <span class="gear-stat"><i data-feather="battery"></i> 88% Charge</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gear-card">
+                    <div class="gear-image">
+                        <img src="images/os.png" alt="OS">
+                    </div>
+                    <div class="gear-details">
+                        <h3>ZENTAKA CORE OS</h3>
+                        <p class="gear-description font-tech">Neural operating system with AI coprocessor.</p>
+                        <div class="gear-specs">
+                            <div><span class="spec-label">Version:</span> <span class="spec-value">v4.2.0</span></div>
+                            <div><span class="spec-label">AI:</span> <span class="spec-value">ZK-Alpha</span></div>
+                            <div><span class="spec-label">Security:</span> <span class="spec-value">Tier-9</span></div>
+                        </div>
+                        <div class="gear-stats">
+                            <span class="gear-stat"><i data-feather="cpu"></i> 4.8THz</span>
+                            <span class="gear-stat"><i data-feather="shield"></i> 98% Secure</span>
+                            <span class="gear-stat"><i data-feather="clock"></i> 42ns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</main>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+<script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Add glitch effect to random elements
+        setInterval(() => {
+            const elements = document.querySelectorAll('.glitch-effect');
+            elements.forEach(el => {
+                if(Math.random() > 0.7) {
+                    el.classList.add('animate-glitch');
+                    setTimeout(() => {
+                        el.classList.remove('animate-glitch');
+                    }, 1000);
+                }
+            });
+        }, 3000);
+    </script>
+    <custom-footer></custom-footer>
+</body>
+</html>

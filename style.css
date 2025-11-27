@@ -1,0 +1,629 @@
+
+/* Font Face Definitions */
+/* Sddystopian font */
+@font-face {
+    font-family: 'Sddystopian';
+    src: url('fonts/Sddystopian.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ShareTechMono font */
+@font-face {
+    font-family: 'Share Tech Mono';
+    src: url('fonts/ShareTechMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Cyberpunk-themed styles */
+@keyframes scanline {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100vh; }
+}
+
+@keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 1; }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.4; }
+}
+body {
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Sddystopian', sans-serif;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 2px;
+    z-index: 0;
+    pointer-events: none;
+    animation: scanline 8s linear infinite;
+}
+
+.glitch-box {
+    position: absolute;
+    background: rgba(157, 0, 255, 0.1);
+    z-index: -1;
+}
+
+.glitch-box-1 {
+    top: 20%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: pulse-glow 6s infinite;
+}
+
+.glitch-box-2 {
+    bottom: 10%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    animation: pulse-glow 7s infinite 1s;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-tertiary {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.btn-primary {
+    background-color: rgba(157, 0, 255, 0.2);
+    border-color: #9d00ff;
+    color: #9d00ff;
+}
+
+.btn-primary:hover {
+    background-color: rgba(157, 0, 255, 0.4);
+    text-shadow: 0 0 8px rgba(157, 0, 255, 0.8);
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.5);
+}
+
+.btn-secondary {
+    background-color: rgba(0, 240, 255, 0.2);
+    border-color: #00f0ff;
+    color: #00f0ff;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 240, 255, 0.4);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.btn-tertiary {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.btn-tertiary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+/* Stat Cards */
+.stat-card {
+    background: rgba(10, 10, 26, 0.7);
+    border: 1px solid rgba(157, 0, 255, 0.3);
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: #9d00ff;
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(157, 0, 255, 0.2);
+    border: 1px solid #9d00ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    background: rgba(157, 0, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.stat-icon i {
+    width: 20px;
+    height: 20px;
+    color: #00f0ff;
+}
+
+.stat-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #9d00ff, #00f0ff);
+    transition: width 1s ease-in-out;
+}
+
+.stat-value {
+    font-family: 'Share Tech Mono', monospace;
+    color: #00f0ff;
+    float: right;
+}
+
+.stat-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* Mission List */
+.mission-list {
+    border: 1px solid rgba(157, 0, 255, 0.3);
+}
+
+.mission-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(157, 0, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.mission-item:last-child {
+    border-bottom: none;
+}
+
+.mission-item:hover {
+    background: rgba(157, 0, 255, 0.05);
+}
+
+.mission-status {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.mission-status-active {
+    background: #00f0ff;
+    box-shadow: 0 0 10px #00f0ff;
+    animation: flicker 3s infinite;
+}
+
+.mission-status-warning {
+    background: #ffcc00;
+    box-shadow: 0 0 10px #ffcc00;
+}
+
+.mission-status-completed {
+    background: #00ff88;
+    box-shadow: 0 0 10px #00ff88;
+}
+
+.mission-content {
+    flex-grow: 1;
+    min-width: 0;
+    padding-right: 15px;
+}
+
+.mission-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.mission-meta {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.mission-difficulty {
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.difficulty-high {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid #ff0000;
+    color: #ff0000;
+}
+
+.difficulty-medium {
+    background: rgba(255, 165, 0, 0.2);
+    border: 1px solid #ffa500;
+    color: #ffa500;
+}
+
+.difficulty-completed {
+    background: rgba(0, 255, 136, 0.2);
+    border: 1px solid #00ff88;
+    color: #00ff88;
+}
+
+.mission-reward {
+    color: #00f0ff;
+}
+
+.mission-toggle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(157, 0, 255, 0.5);
+    background: transparent;
+    color: #9d00ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.mission-toggle:hover {
+    background: rgba(157, 0, 255, 0.2);
+}
+
+.mission-item.active .mission-toggle {
+    transform: rotate(180deg);
+}
+
+.mission-details {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    background: rgba(10, 10, 26, 0.5);
+    border-top: 1px solid transparent;
+}
+
+.mission-item.active .mission-details {
+    max-height: 500px;
+    padding: 15px;
+    border-top: 1px solid rgba(157, 0, 255, 0.3);
+}
+
+.mission-objectives {
+    margin-bottom: 15px;
+}
+
+.mission-objectives h4 {
+    color: #00f0ff;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mission-objectives ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.mission-objectives li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.mission-objectives li:before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: #9d00ff;
+    font-weight: bold;
+}
+
+.mission-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.mission-info div {
+    display: flex;
+    gap: 5px;
+}
+
+.info-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+}
+
+.info-value {
+    color: #00f0ff;
+    font-size: 0.8rem;
+}
+
+/* Completed Missions Section */
+#completed-missions .mission-item {
+    opacity: 0.8;
+}
+
+#completed-missions .mission-item:hover {
+    opacity: 1;
+}
+
+#completed-missions .mission-content h3 {
+    text-decoration: line-through;
+    text-decoration-color: rgba(0, 255, 136, 0.5);
+}
+
+#completed-missions .mission-details {
+    background: rgba(10, 10, 26, 0.3);
+}
+/* Sponsor Logo */
+.sponsor-logo {
+    height: 24px;
+    filter: brightness(1.2) contrast(1.2) saturate(1.5);
+    margin-bottom: 1rem;
+}
+/* Gear Cards */
+.gear-card {
+    background: rgba(10, 10, 26, 0.7);
+    border: 1px solid rgba(157, 0, 255, 0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.gear-card:hover {
+    border-color: #9d00ff;
+    box-shadow: 0 0 20px rgba(157, 0, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.gear-image {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gear-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+    transition: all 0.5s ease;
+}
+
+.gear-card:hover .gear-image img {
+    transform: scale(1.05);
+    filter: brightness(1.1) contrast(1.2);
+}
+
+.gear-details {
+    padding: 15px;
+}
+
+.gear-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.gear-specs {
+    margin: 15px 0;
+    font-size: 0.8rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.gear-specs div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    border-bottom: 1px dotted rgba(157, 0, 255, 0.2);
+}
+
+.spec-label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.spec-value {
+    color: #00f0ff;
+    font-weight: bold;
+}
+
+.gear-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.gear-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #00f0ff;
+    background: rgba(0, 240, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.gear-stat i {
+    width: 14px;
+    height: 14px;
+}
+/* Contact Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(10, 10, 26, 0.7);
+    border: 1px solid rgba(157, 0, 255, 0.5);
+    color: #00f0ff;
+    font-family: 'Share Tech Mono', monospace;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #00f0ff;
+    box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.3);
+    outline: none;
+}
+
+#successMessage {
+    border: 1px solid rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 20px rgba(157, 0, 255, 0.5);
+    animation: pulse-glow 2s infinite;
+}
+/* Connection Cards */
+.connection-card {
+    background: rgba(10, 10, 26, 0.7);
+    border: 1px solid rgba(157, 0, 255, 0.3);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.connection-card:hover {
+    border-color: #9d00ff;
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.3);
+}
+
+.connection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.connection-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.connection-status-active {
+    background: #00f0ff;
+    box-shadow: 0 0 5px #00f0ff;
+}
+
+.connection-status-warning {
+    background: #ffcc00;
+    box-shadow: 0 0 5px #ffcc00;
+}
+
+.connection-description {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.connection-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #00f0ff;
+    font-size: 0.8rem;
+}
+
+/* Operation Cards */
+.operation-card {
+    background: rgba(10, 10, 26, 0.7);
+    border: 1px solid rgba(157, 0, 255, 0.3);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.operation-card:hover {
+    border-color: #9d00ff;
+    box-shadow: 0 0 15px rgba(157, 0, 255, 0.3);
+}
+
+.operation-progress {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #9d00ff, #00f0ff);
+}
+
+/* Log List */
+.log-list {
+    border: 1px solid rgba(157, 0, 255, 0.3);
+    padding: 1rem;
+}
+
+.log-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(157, 0, 255, 0.2);
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    gap: 1rem;
+}
+
+.log-item:last-child {
+    border-bottom: none;
+}
+
+.log-time {
+    color: #9d00ff;
+}
+
+.log-message {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mission-item {
+        flex-wrap: wrap;
+    }
+    
+    .mission-btn {
+        width: 100%;
+        margin-top: 15px;
+    }
+}

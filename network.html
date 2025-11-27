@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETWORK | Zentaka Cybernetics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyberpurple: '#9d00ff',
+                        cyberblue: '#00f0ff',
+                        cyberdark: '#0a0a1a',
+                    },
+                    fontFamily: {
+                        'cyber': ['"Sddystopian"', 'sans-serif'],
+                        'tech': ['"Share Tech Mono"', 'monospace']
+                    },
+                    animation: {
+                        'glitch': 'glitch 1s linear infinite',
+                        'flicker': 'flicker 3s linear infinite',
+                        'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    },
+                    keyframes: {
+                        glitch: {
+                            '0%': { transform: 'translate(0)' },
+                            '20%': { transform: 'translate(-2px, 2px)' },
+                            '40%': { transform: 'translate(-2px, -2px)' },
+                            '60%': { transform: 'translate(2px, 2px)' },
+                            '80%': { transform: 'translate(2px, -2px)' },
+                            '100%': { transform: 'translate(0)' }
+                        },
+                        flicker: {
+                            '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': { opacity: '1' },
+                            '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': { opacity: '0.4' }
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { 'box-shadow': '0 0 5px rgba(157, 0, 255, 0)' },
+                            '50%': { 'box-shadow': '0 0 20px rgba(157, 0, 255, 0.7)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-cyberdark text-cyberblue font-cyber min-h-screen overflow-x-hidden">
+    <custom-header></custom-header>
+    
+    <main class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Glitch background elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10"></div>
+            <div class="glitch-box glitch-box-1"></div>
+            <div class="glitch-box glitch-box-2"></div>
+        </div>
+
+        <section class="mb-16">
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 border-b border-cyberpurple pb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyberpurple to-cyberblue">
+                NETWORK STATUS
+            </h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="globe"></i>
+                    </div>
+                    <h3>GLOBAL NODES</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 78%"></div>
+                    </div>
+                    <span class="stat-value">78/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="cloud"></i>
+                    </div>
+                    <h3>CLOUD COVERAGE</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 92%"></div>
+                    </div>
+                    <span class="stat-value">92/100</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i data-feather="shield"></i>
+                    </div>
+                    <h3>NETWORK SECURITY</h3>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" style="width: 85%"></div>
+                    </div>
+                    <span class="stat-value">85/100</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-b border-cyberpurple pb-2">ACTIVE CONNECTIONS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="connection-card">
+                    <div class="connection-header">
+                        <h3>ARASAKA TOWER</h3>
+                        <span class="connection-status connection-status-active"></span>
+                    </div>
+                    <p class="connection-description text-cyberblue font-tech">Stealth connection established via subnet breach. Data exfiltration in progress.</p>
+<div class="connection-meta font-tech">
+                        <span><i data-feather="clock"></i> 2h 42m</span>
+                        <span><i data-feather="bar-chart-2"></i> 42Gb/s</span>
+                    </div>
+                </div>
+                <div class="connection-card">
+                    <div class="connection-header">
+                        <h3>KANG TAO HQ</h3>
+                        <span class="connection-status connection-status-warning"></span>
+                    </div>
+                    <p class="connection-description text-cyberblue font-tech">Maintaining surveillance taps on executive communications.</p>
+<div class="connection-meta font-tech">
+                        <span><i data-feather="clock"></i> 1d 5h</span>
+                        <span><i data-feather="bar-chart-2"></i> 8Gb/s</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+	<script>
+    feather.replace();
+</script>
+
+</body>
+</html>

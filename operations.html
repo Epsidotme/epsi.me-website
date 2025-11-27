@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERATIONS | Zentaka Cybernetics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyberpurple: '#9d00ff',
+                        cyberblue: '#00f0ff',
+                        cyberdark: '#0a0a1a',
+                    },
+                    fontFamily: {
+                        'cyber': ['"Sddystopian"', 'sans-serif'],
+                        'tech': ['"Share Tech Mono"', 'monospace']
+                    },
+                    animation: {
+                        'glitch': 'glitch 1s linear infinite',
+                        'flicker': 'flicker 3s linear infinite',
+                        'pulse-glow': 'pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    },
+                    keyframes: {
+                        glitch: {
+                            '0%': { transform: 'translate(0)' },
+                            '20%': { transform: 'translate(-2px, 2px)' },
+                            '40%': { transform: 'translate(-2px, -2px)' },
+                            '60%': { transform: 'translate(2px, 2px)' },
+                            '80%': { transform: 'translate(2px, -2px)' },
+                            '100%': { transform: 'translate(0)' }
+                        },
+                        flicker: {
+                            '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': { opacity: '1' },
+                            '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': { opacity: '0.4' }
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { 'box-shadow': '0 0 5px rgba(157, 0, 255, 0)' },
+                            '50%': { 'box-shadow': '0 0 20px rgba(157, 0, 255, 0.7)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-cyberdark text-cyberblue font-cyber min-h-screen overflow-x-hidden">
+    <custom-header></custom-header>
+    
+    <main class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Glitch background elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10"></div>
+            <div class="glitch-box glitch-box-1"></div>
+            <div class="glitch-box glitch-box-2"></div>
+        </div>
+
+        <section class="mb-16">
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 border-b border-cyberpurple pb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyberpurple to-cyberblue">
+                OPERATIONS CENTER
+            </h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="operation-card">
+                    <h3 class="text-xl text-cyberpurple mb-2">NEURAL HACKING</h3>
+                    <p class="text-sm text-cyberblue mb-4 font-tech">Direct neural interface penetration techniques</p>
+<div class="operation-progress">
+                        <div class="progress-bar" style="width: 65%"></div>
+                    </div>
+                    <span class="text-xs text-cyberblue mt-2 font-tech">65% completion</span>
+                </div>
+                <div class="operation-card">
+                    <h3 class="text-xl text-cyberpurple mb-2">DATA EXTRACTION</h3>
+                    <p class="text-sm text-cyberblue mb-4 font-tech">Quantum encryption bypass protocols</p>
+<div class="operation-progress">
+                        <div class="progress-bar" style="width: 42%"></div>
+                    </div>
+                    <span class="text-xs text-cyberblue mt-2 font-tech">42% completion</span>
+                </div>
+                <div class="operation-card">
+                    <h3 class="text-xl text-cyberpurple mb-2">SYSTEM OVERRIDE</h3>
+                    <p class="text-sm text-cyberblue mb-4 font-tech">Corporate security subversion</p>
+<div class="operation-progress">
+                        <div class="progress-bar" style="width: 88%"></div>
+                    </div>
+                    <span class="text-xs text-cyberblue mt-2 font-tech">88% completion</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 border-b border-cyberpurple pb-2">OPERATION LOGS</h2>
+            <div class="log-list">
+                <div class="log-item">
+                    <span class="log-time">[22:42:07]</span>
+                    <span class="log-message text-cyberblue font-tech">Established connection with Arasaka subnet</span>
+</div>
+                <div class="log-item">
+                    <span class="log-time">[22:38:55]</span>
+                    <span class="log-message text-cyberblue font-tech">Bypassed quantum firewall (ZK-256)</span>
+</div>
+                <div class="log-item">
+                    <span class="log-time">[22:35:12]</span>
+                    <span class="log-message text-cyberblue font-tech">Initiated neural data extraction protocol</span>
+</div>
+                <div class="log-item">
+                    <span class="log-time">[22:30:42]</span>
+                    <span class="log-message text-cyberblue font-tech">Detected intrusion countermeasures - ICE deployed</span>
+</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
