@@ -36,7 +36,7 @@ body {
 }	
   /* Apply custom cursor everywhere */
 body, nav a, nav button {
-  cursor: url('images/cursor.cur'), auto;
+  cursor: url('images/cursor.cur'), auto !important;
 }
 
 
