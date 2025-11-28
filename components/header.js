@@ -37,6 +37,7 @@ class CustomHeader extends HTMLElement {
     font-weight: 600;
     text-transform: uppercase;
     white-space: nowrap;
+	  cursor: url('images/cursor.cur'), auto !important;
 }
 
 nav ul {
@@ -45,6 +46,7 @@ nav ul {
     padding: 0;
     display: flex;
     gap: 10px;
+	  cursor: url('images/cursor.cur'), auto !important;
 }
 
 nav a {
@@ -52,11 +54,13 @@ nav a {
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.2s;
+	  cursor: url('images/cursor.cur'), auto !important;
 }
 
 nav a:hover,
 nav a.active {
     color: #00e0ff;
+	  cursor: url('images/cursor.cur'), auto !important;
 }
 
                 
@@ -81,6 +85,7 @@ nav a.active {
                     display: flex;
                     align-items: center;
                     gap: 10px;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 .logo-icon {
@@ -98,6 +103,7 @@ nav a.active {
                     width: 16px;
                     height: 16px;
                     color: #0a0a1a;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 .logo-text {
@@ -114,6 +120,7 @@ nav a.active {
                     display: flex;
                     gap: 1.5rem;
                     list-style: none;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 nav a {
@@ -138,18 +145,22 @@ nav a.active {
                     height: 2px;
                     background: linear-gradient(90deg, #9d00ff, #00f0ff);
                     transition: width 0.3s ease;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 nav a:hover::after {
                     width: 100%;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 .active {
                     color: #00f0ff;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 .active::after {
                     width: 100% !important;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 @media (max-width: 768px) {
