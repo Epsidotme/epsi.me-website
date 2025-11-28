@@ -33,11 +33,12 @@ body {
     position: relative;
     overflow-x: hidden;
     font-family: 'Sddystopian', sans-serif;
-  cursor: url('images/cursor.cur') 0 0, auto;}
-  
-  a:hover {
-  cursor: url('/images/cursor.cur'), pointer;
+	
+  /* Apply custom cursor everywhere */
+body, nav a, nav button {
+  cursor: url('images/cursor.cur'), auto;
 }
+
 
 
 body::before {
