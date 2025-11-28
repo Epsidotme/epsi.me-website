@@ -33,7 +33,7 @@ body {
     position: relative;
     overflow-x: hidden;
     font-family: 'Sddystopian', sans-serif;
-	
+}	
   /* Apply custom cursor everywhere */
 body, nav a, nav button {
   cursor: url('images/cursor.cur'), auto;
