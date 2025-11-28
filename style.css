@@ -34,6 +34,12 @@ body {
     overflow-x: hidden;
     font-family: 'Sddystopian', sans-serif;
   cursor: url('images/cursor.cur') 0 0, auto;}
+  
+  a:hover {
+  cursor: url('/images/cursor.cur'), pointer;
+}
+
+
 body::before {
     content: "";
     position: fixed;
