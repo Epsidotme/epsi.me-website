@@ -7,6 +7,7 @@ class CustomHeader extends HTMLElement {
                     display: block;
                     position: relative;
                     z-index: 100;
+					cursor: url('images/cursor.cur'), auto !important;
                 }
 				
 
@@ -65,6 +66,7 @@ nav a.active {
                     border-bottom: 1px solid rgba(157, 0, 255, 0.3);
                     padding: 1rem 2rem;
                     position: relative;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 .header-container {
@@ -89,6 +91,7 @@ nav a.active {
                     align-items: center;
                     justify-content: center;
                     border-radius: 4px;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 .logo-icon i {
@@ -104,6 +107,7 @@ nav a.active {
                     -webkit-background-clip: text;
                     background-clip: text;
                     color: transparent;
+	  cursor: url('images/cursor.cur'), auto !important;
                 }
                 
                 nav ul {
@@ -121,6 +125,8 @@ nav a.active {
                     text-transform: uppercase;
                     letter-spacing: 1px;
                     font-size: 0.9rem;
+	  cursor: url('images/cursor.cur'), auto !important;
+					
                 }
                 
                 nav a::after {
