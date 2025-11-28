@@ -33,20 +33,8 @@ body {
     position: relative;
     overflow-x: hidden;
     font-family: 'Sddystopian', sans-serif;
-    cursor: none;
+  cursor: url('images/cursor.cur'), auto !important;
 	}
-	
-	#cursor-glitch {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 16px;           /* desired size */
-  height: 16px;
-  pointer-events: none;   /* IMPORTANT */
-  z-index: 99999;
-  background: url('images/cursor.cur') no-repeat center center;
-  background-size: contain;
-}
 
 body::before {
     content: "";
@@ -60,6 +48,8 @@ body::before {
     z-index: 0;
     pointer-events: none;
     animation: scanline 8s linear infinite;
+	  cursor: url('images/cursor.cur'), auto !important;
+
 }
 
 .glitch-box {
@@ -98,41 +88,52 @@ body::before {
     position: relative;
     overflow: hidden;
     font-family: 'Rajdhani', sans-serif;
+	  cursor: url('images/cursor.cur'), auto !important;
+
 }
 
 .btn-primary {
     background-color: rgba(157, 0, 255, 0.2);
     border-color: #9d00ff;
     color: #9d00ff;
+	  cursor: url('images/cursor.cur'), auto !important;
+
 }
 
 .btn-primary:hover {
     background-color: rgba(157, 0, 255, 0.4);
     text-shadow: 0 0 8px rgba(157, 0, 255, 0.8);
     box-shadow: 0 0 15px rgba(157, 0, 255, 0.5);
+	  cursor: url('images/cursor.cur'), auto !important;
+
 }
 
 .btn-secondary {
     background-color: rgba(0, 240, 255, 0.2);
     border-color: #00f0ff;
     color: #00f0ff;
+	  cursor: url('images/cursor.cur'), auto !important;
+
 }
 
 .btn-secondary:hover {
     background-color: rgba(0, 240, 255, 0.4);
     text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
     box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+	  cursor: url('images/cursor.cur'), auto !important;
 }
 
 .btn-tertiary {
     background-color: transparent;
     border-color: rgba(255, 255, 255, 0.3);
     color: white;
+	  cursor: url('images/cursor.cur'), auto !important;
 }
 
 .btn-tertiary:hover {
     background-color: rgba(255, 255, 255, 0.1);
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+	  cursor: url('images/cursor.cur'), auto !important;
 }
 /* Stat Cards */
 .stat-card {

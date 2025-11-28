@@ -14,6 +14,8 @@ class CustomHeader extends HTMLElement {
     display: flex;
     justify-content: space-between;
     align-items: center;
+	  cursor: url('images/cursor.cur'), auto !important;
+	
 }
 
 .sponsor-section {
