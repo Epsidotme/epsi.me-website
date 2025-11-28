@@ -43,10 +43,11 @@ nav a, nav a:hover, nav a:active, nav a:focus,
 nav button, nav button:hover, nav button:active, nav button:focus {
   cursor: url('images/cursor.cur'), auto !important;
 }
-/* Force custom cursor on nav and all its descendants */
-nav, nav * {
+/* Force custom cursor on the header and all its children */
+header, header * {
   cursor: url('images/cursor.cur'), auto !important;
 }
+
 
 
 
