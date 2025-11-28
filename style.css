@@ -643,27 +643,6 @@ body::before {
   align-items: center;
 }
 
-/* Sponsor Section */
-.sponsor-section {
-  display: inline-block;       /* allows text to appear below logo */
-  text-align: center;          /* center text under logo */
-  color: #0ff;                 /* neon cyan */
-  text-decoration: none;
-}
-
-.sponsor-logo {
-  max-width: 50px;             /* smaller logo */
-  height: auto;
-  display: block;              /* forces next element onto new line */
-  margin: 0 auto 5px auto;     /* centers logo and adds spacing below */
-}
-
-.sponsor-text {
-  display: block;              /* ensures it appears below logo */
-  font-size: 0.75rem;
-  color: #0ff;
-  letter-spacing: 0.5px;
-}
 
 
 
