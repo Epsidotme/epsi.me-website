@@ -33,25 +33,20 @@ body {
     position: relative;
     overflow-x: hidden;
     font-family: 'Sddystopian', sans-serif;
-
-}	
-  /* Force custom cursor everywhere, including hover/active/focus states */
-body,
-a, a:hover, a:active, a:focus,
-button, button:hover, button:active, button:focus,
-nav a, nav a:hover, nav a:active, nav a:focus,
-nav button, nav button:hover, nav button:active, nav button:focus {
-  cursor: url('images/cursor.cur'), auto !important;
+    cursor: none;
+	}
+	
+	#cursor-glitch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;           /* desired size */
+  height: 16px;
+  pointer-events: none;   /* IMPORTANT */
+  z-index: 99999;
+  background: url('images/cursor.cur') no-repeat center center;
+  background-size: contain;
 }
-/* Force custom cursor on the header and all its children */
-header, header * {
-  cursor: url('images/cursor.cur'), auto !important;
-}
-
-
-
-
-
 
 body::before {
     content: "";
