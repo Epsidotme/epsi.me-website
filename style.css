@@ -35,9 +35,16 @@ body {
     font-family: 'Sddystopian', sans-serif;
 }	
   /* Apply custom cursor everywhere */
-body, nav a, nav button {
+body,
+nav a,
+nav a:active,
+nav a:hover,
+nav button,
+nav button:active,
+nav button:hover {
   cursor: url('images/cursor.cur'), auto !important;
 }
+
 
 
 
